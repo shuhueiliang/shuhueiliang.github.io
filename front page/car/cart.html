@@ -1,0 +1,44 @@
+<!-- Your shopping cart HTML (cart.html) -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>購物車</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <header>
+        <h1>購物車</h1>
+    </header>
+
+    <section>
+        <table id="cart-table">
+            <thead>
+                <tr>
+                    <th>商品名稱</th>
+                    <th>價格</th>
+                    <th>數量</th>
+                    <th>小計</th>
+                    <th>操作</th> <!-- Add this column for buttons -->
+                </tr>
+            </thead>
+            <tbody>
+                <!-- This will be dynamically populated by JavaScript -->
+            </tbody>
+        </table>
+        
+        <p id="total">Total: $0.00</p>
+        
+        <button id="checkout-btn" class="checkout-btn">結帳</button>        
+
+    </section>
+
+    <script src="script.js"></script>
+    <!-- ... Your existing HTML code ... -->
+
+    <script src="cart.js"></script>
+
+</body>
+</html>

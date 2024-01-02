@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>會員註冊網頁</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #e8e2f3;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            text-align: center;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        form {
+            max-width: 300px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        input[type="text"], input[type="password"] {
+            width: 100%;
+            padding: 8px;
+            margin: 5px 0 15px;
+            box-sizing: border-box;
+        }
+
+        input[type="button"] {
+            background-color: #ffe7e7;
+            color: rgb(68, 52, 52);
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        input[type="button"]:hover {
+            background-color: #fcc7cc;
+        }
+
+        div {
+            margin-top: 30px;
+        }
+
+        input[type="text"]:focus, input[type="password"]:focus {
+            outline: none;
+            border: 1px solid #524444;
+        }
+
+        /* Styles for the checkbox */
+        #toggleCheckboxContainer {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        #toggleCheckbox {
+            margin-right: 5px;
+            font-size: 14px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <h1>會員註冊</h1>
+    <div>
+        <form name="staffform">
+            帳號<input type="text" name="newName" id="newName"><br><br>
+            密碼<input type="password" name="newPhone" id="newPhone"><br><br>
+            <input type="button" value="註冊" onclick="register()">
+        </form>
+    </div>
+
+    <script>
+        function register() {
+            let newName = document.getElementById('newName').value;
+            let newPhone = document.getElementById('newPhone').value;
+
+            if (newName && newPhone) {
+                // Retrieve existing data from localStorage
+                let storedData = localStorage.getItem('employees');
+                let employees = storedData ? JSON.parse(storedData) : [];
+
+                // Add the new employee
+                let newEmployee = { name: newName, phone: newPhone };
+                employees.push(newEmployee);
+
+                // Store the updated data back to localStorage
+                localStorage.setItem('employees', JSON.stringify(employees));
+
+                // Redirect back to the login page
+                window.location.href = 'index.html';
+            } else {
+                alert('請填寫帳號和密碼！');
+            }
+        }
+    </script>
+
+</body>
+
+</html>

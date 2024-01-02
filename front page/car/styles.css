@@ -1,0 +1,44 @@
+/* 根據需要添加樣式 */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+header {
+    background-color: #fdcccc;
+    color: #fff;
+    text-align: center;
+    padding: 1em;
+}
+
+section {
+    margin: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: #b2cced;
+    color: white;
+}
+
+.checkout-btn {
+    background-color: #b2cced;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}

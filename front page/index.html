@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>會員登入</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #e8e2f3;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            text-align: center;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        form {
+            max-width: 300px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        input[type="text"], input[type="password"] {
+            width: 100%;
+            padding: 8px;
+            margin: 5px 0 15px;
+            box-sizing: border-box;
+        }
+
+        input[type="button"] {
+            background-color: #ffe7e7;
+            color: rgb(68, 52, 52);
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        input[type="button"]:hover {
+            background-color: #fcc7cc;
+        }
+
+        div {
+            margin-top: 30px;
+        }
+
+        input[type="text"]:focus, input[type="password"]:focus {
+            outline: none;
+            border: 1px solid #524444;
+        }
+
+        /* Styles for the checkbox */
+        #toggleCheckboxContainer {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        #toggleCheckbox {
+            margin-right: 5px;
+            font-size: 14px; /* Adjust the font size */
+        }
+    </style>
+
+</head>
+
+<body>
+    <h1>會員登入</h1>
+    <div>
+        <form name="staffform">
+            輸入帳號<input type="text" name="s1"><br><br>
+            密碼<input type="password" name="s2">
+            <div id="toggleCheckboxContainer">
+                <input type="checkbox" id="toggleCheckbox" onclick="togglePassword()"> 
+                <label for="toggleCheckbox">顯示密碼</label>
+            </div>
+            <br>
+            <input type="button" value="登入" onclick="staff()">
+            <br><br>
+            <a href="register.html">註冊會員</a>
+        </form>
+    </div>
+
+    <script>
+        function staff() {
+            let username = staffform.s1.value;
+            let password = staffform.s2.value;
+    
+            if (username && password) {
+                let found = false;
+    
+                // Retrieve employee data from localStorage
+                let storedData = localStorage.getItem('employees');
+                let employees = storedData ? JSON.parse(storedData) : [];
+    
+                for (let i = 0; i < employees.length; i++) {
+                    if (employees[i].name == username && employees[i].phone == password) {
+                        found = true;
+                        alert('登入成功!');
+                        
+                        // Redirect to the target page upon successful login
+                        window.location.href = 'front page.html';
+                        
+                        break;
+                    }
+                }
+    
+                if (!found) {
+                    alert('無此會員資料或密碼錯誤!!');
+                }
+            } else {
+                alert('請輸入帳號和密碼!');
+            }
+        }
+    
+        function togglePassword() {
+            let passwordField = document.getElementsByName('s2')[0];
+            passwordField.type = passwordField.type === 'password' ? 'text' : 'password';
+        }
+    </script>
+
+</body>
+
+</html>

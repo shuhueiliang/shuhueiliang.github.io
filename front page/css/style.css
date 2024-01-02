@@ -1,0 +1,324 @@
+/* 將寬高設定作用在邊框外緣的範圍內 */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Noto Sans CJK TC", "Microsoft JhengHei", PingFang, STHeiti, sans-serif, serif;
+  margin: 0;
+}
+
+/* 移除超連結底線 */
+a {
+  text-decoration: none;
+}
+
+/* 導覽列設定 */
+nav {
+  display: flex;
+  background-color: rgb(255, 255, 255);
+}
+
+/* 導覽列超連結設定 */
+nav a {
+  color: rgb(107, 138, 174);
+  padding: 10px;
+}
+
+/* 導覽列滑鼠移過超連結設定 */
+nav a:hover {
+  color: rgb(226, 196, 220);
+}
+
+/* 頁首 */
+/* Add these styles for the image carousel */
+#image-carousel {
+  overflow: hidden;
+  height: 455px; /* Adjust the height as needed */
+}
+
+.carousel-image {
+  width: 100%;
+  display: none;
+}
+
+header {
+  background: no-repeat, center top fixed;
+  /*不重覆排列、靠上置中、固定位置*/
+  /*background-image: url("bg01.PNG"), url("bg01.PNG");*/
+  background-size: cover;
+  /*不變形，寬高等比例，在必要時局部裁切*/
+  background-blend-mode: screen;
+  /*將兩張圖以濾色模式呈現*/
+
+  /*image-carousel*/
+  overflow: hidden;
+  height: 100px; /* 調整高度為300px */
+}
+
+.carousel-image {
+  width: 100%; /* 讓圖片寬度佔滿父元素 */
+  height: 100%; /* 讓圖片高度佔滿父元素，即設定高度為300px */
+  object-fit: cover; /* 保持圖片比例並填滿整個元素 */
+  display: none;
+}
+
+#image-carousel {
+  position: relative;
+}
+
+.carousel-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: #fff; /* 調整文字顏色 */
+}
+
+.carousel-buttons {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  width: 100%;
+}
+
+.carousel-button {
+  background: none;
+  border: none;
+  font-size: 18px;
+  color: #fff;
+  cursor: pointer;
+  padding: 10px;
+}
+
+.carousel-buttons .left {
+  left: 0; /* 调整左侧按钮的位置到最左边 */
+}
+
+.carousel-buttons .right {
+  position: fixed;
+  right: 20px; /* Adjust this value as needed */
+}
+
+/*Zeal Open標題*/
+h1 {
+  font-size: 10vmin;
+  color: rgba(255, 255, 255, 0.763);
+  padding: 2px 2px 0; /* 調整 padding 底部值為0 */
+  margin-bottom: 0; /* 新增 margin-bottom 為0 */
+  text-align: center;
+  mix-blend-mode: overlay;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+/*LOGO設定*/
+.logo {
+  position: relative; /*相對配置*/
+}
+
+section {
+  padding: 20px;
+}
+
+/*flexbox設定 關於Zeal Open*/
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: stretch;
+}
+
+/*建立彼此相鄰的3個欄*/
+.column {
+  padding: 10px;
+}
+
+/*小欄*/
+.column.side {
+  flex: 1;
+  background-color: rgb(235, 242, 253);
+  padding: 20px;
+  margin-bottom: 10px;
+  overflow: hidden;
+}
+
+/*中欄*/
+.column.middle {
+  flex: 1;
+  background-color: rgb(255, 237, 252);
+  padding: 20px;
+  margin-bottom: 10px;
+  overflow: hidden;
+}
+
+/*RWD設定*/
+@media (max-width: 600px) {
+  .row {
+      -webkit-flex-direction: column;
+      flex-direction: column;
+  }
+}
+
+/*按鈕*/
+.button {
+  font-size: 1rem;
+  text-align: center;
+  background: rgb(152, 174, 215);
+  color: #fff;
+  padding: 8px 10px;
+  transition: border-radius .5s ease-in;
+}
+
+.button:hover {
+  background: rgb(222, 176, 214);
+  border-radius: 50%;
+}
+
+h2 {
+  position: relative;
+  padding: 0.25em 1em;
+  border: solid 2px rgb(238, 217, 234);
+  border-radius: 3px 0 3px 0;
+  color: #716e77;
+  text-align: center;
+}
+
+h2:before,
+h2:after {
+  content: '';
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border: solid 2px rgb(238, 217, 234);
+  border-radius: 50%;
+}
+
+h2:after {
+  top: -12px;
+  left: -12px;
+}
+
+h2:before {
+  bottom: -12px;
+  right: -12px;
+}
+
+h3 {
+  padding: 0.25em 1em;
+  text-align: center;
+  color: #0a0864;
+  border: dashed 1px #08644b;
+}
+
+h5 {
+  text-align: center;
+}
+
+P {
+  font-size: 1rem;
+  text-align: justify;
+  line-height: 24px;
+}
+
+.box {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+
+form {
+  font-size: 1.2rem;
+}
+
+input[type=text],
+input[type=email],
+input[type=search],
+select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid rgb(214, 221, 231);
+  border-radius: 4px;
+}
+
+input[type=submit] {
+  width: 100%;
+  background-color: rgb(94, 112, 146);
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: rgb(156, 187, 244);
+}
+
+iframe {
+  width: 100%;
+}
+
+/*頁尾*/
+footer {
+  padding: 10px;
+  text-align: center;
+  background-color: rgb(231, 214, 227);
+}
+
+footer a {
+  color: #050505;
+  padding: 10px;
+  text-align: center;
+  text-decoration: none;
+}
+
+footer a:hover {
+  color: rgb(178, 175, 186);
+}
+
+/* back to top button */
+#back-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  display: none;
+  background-color: #7e7f8071;
+  color: #d6f2fa;
+  border: none;
+  border-radius: 50%; /* Make it a circle */
+  width: 40px; /* Adjust the width and height as needed */
+  height: 40px;
+  text-align: center;
+  line-height: 40px;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+/* back-to-top */
+#back-to-top:hover {
+  background-color: #616161; /* Change the color on hover */
+}
+
+.carousel-buttons {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between; /* Adjust alignment as needed */
+  transform: translateY(-50%);
+}
+
+.carousel-button {
+  background: none;
+  border: none;
+  font-size: 18px;
+  color: #fff;
+  cursor: pointer;
+  padding: 10px;
+}
+

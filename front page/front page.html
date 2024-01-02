@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-Tw">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zeal Open</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <a href="front page.html"><i class="fa-solid fa-shop"></i> 首頁</a>
+            <a href="blog/blog.html"><i class="fa-solid fa-thumbs-up fa-fw"></i> 關於我們</a>
+            <a href="products/product.html"><i class="fa-solid fa-bag-shopping fa-fw"></i> 產品</a>
+            <a href="#contact"><i class="fa-solid fa-envelope"></i> 聯絡我們</a>
+        </nav>
+    </header>
+
+    <body>
+        <header id="image-carousel">
+            <div class="carousel-buttons">
+                <button class="carousel-button" onclick="prevSlide()">&lt;</button>
+                <button class="carousel-button" onclick="nextSlide()">&gt;</button>
+            </div>
+            <div class="carousel-text">
+                <h1>Zeal Open</h1>
+                <img class="logo" src="img/logo.png" alt="logo">
+            </div>
+            <div id="image-container">
+                <img class="carousel-image" src="img/1.JPG" alt="Image 1">
+                <img class="carousel-image" src="img/2.JPG" alt="Image 2">
+                <img class="carousel-image" src="img/3.JPG" alt="Image 3">
+                <img class="carousel-image" src="img/4.JPG" alt="Image 4">
+                <img class="carousel-image" src="img/5.JPG" alt="Image 5">
+            </div>
+        </header>
+
+    <section class="row">
+        <div class="column side">
+            <img src="img/pic01.jpg" width="100%">
+        </div>
+        <div class="column middle">
+            <h2>關於Zeal Open</h2>
+            <p style="text-align: center;">Zeal Open是致力於提升每位顧客自然之美的化妝品品牌。 我們相信，真正的美麗源自於對大自然的尊重和對高品質成分的承諾。 從我們的創始起，我們追求卓越，以創新、永續和令人信賴的產品為客戶提供獨特的美容體驗。</p>
+            <p style="text-align: center;">我們對環保和永續性的承諾貫穿品牌的各個層面。 Zeal Open致力於減少對環境的影響，所有產品均符合最嚴格的環保標準。我們堅決反對動物測試，確保我們的產品在保護動物的同時為您帶來最佳的美容效果。</p>
+            <P></P>
+        </div>
+        <div class="column side">
+            <img src="img/pic02.jpg" width="100%">
+        </div>
+    </section>
+
+    <button id="back-to-top" onclick="scrollToTop()"><i class="fa-solid fa-arrow-up"></i></button>
+
+    <section class="row">
+        <div class="column side">
+            <img src="img/pic03.JPG" width="100%">
+        </div>
+        <div class="column side">
+            <img src="img/pic04.JPG" width="100%">
+        </div>
+        <div class="column middle">
+            <h2>Blue小冰塊唇膏</h2>
+            <p style="text-align: center;">唇膏質地絲滑顯色，塗抹起來的觸感薄透輕盈，且只要薄擦一層，即可擁有優秀的顯色度，以及長時間的持色效果。</p>
+            <h3>$680</h3>
+            <!-- Inside the product section -->
+            <h5><a class="button" href="car/cart.html" onclick="addToCart('Blue小冰塊唇膏', 680)">加入購物車</a></h5>
+
+        </div>
+    </section>
+    <section class="row">
+        <div class="column middle">
+            <img src="img/pic06.jpg" width="100%">
+        </div>
+        <div class="column middle">
+            <img src="img/pic05.jpg" width="100%">
+        </div>
+        <div class="column side">
+            <h2>禁忌玫瑰眼影盤</h2>
+            <p style="text-align: center;">低飽和溫柔粉棕色系，疊搭冰透櫻花碎鑽，黃皮也能即刻刷新夏日顯嫩眼色，升級果凍慕斯質地，細膩軟糯易暈染，點染粉漾仙氣，定格盛夏微甜氛圍！</p>
+            <h3>$1080</h3>
+            <h5><a class="button" href="car/cart.html" onclick="addToCart('禁忌玫瑰眼影盤', 1080)">加入購物車</a></h5>
+        </div>
+    </section>
+    <section id="contact">
+        <h2><a href="#"></a><i class="fa-solid fa-envelope"></i> 聯絡我們</h2>
+        <p>如果您需要進一步的解釋或想要購買商品，請致電我的辦公室，電話號碼為1234567890，或使用庫存商品上的銷售諮詢鏈接，我的團隊中的一位成員將與您聯繫。 請參閱以下關於海關和進口稅款的資訊。</p>
+        <div class="box">
+            <form action="javascript:void(0);" onsubmit="showMessage()">
+                <label for="fname">Name</label>
+                <input type="text" id="fname" name="name" placeholder="Your name.." required>
+                <label for="mail">Email</label>
+                <input type="email" id="mail" name="mail" placeholder="Your Email.." required>
+                <label for="country">Country</label>
+                <select id="country" name="country" required>
+                    <option value="taiwan">Taiwan</option>
+                    <option value="australia">Australia</option>
+                    <option value="japan">Japan</option>
+                    <option value="usa">USA</option>
+                </select>
+                <label for="text">Opinion</label>
+                <input type="text" id="text" name="text" placeholder="Your Opinion.." required>
+                <input type="submit" value="傳送">
+            </form>
+        </div>
+    </section>
+    <section>
+        <h2><a href="#"></a><i class="fa-solid fa-city"></i> 我們的位置</h2>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d25301.787278001997!2d126.94517065815934!3d37.561579825794595!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357ca2f11b3f14ab%3A0x3b436be085e38e0c!2z5Y2X6Z-T6aaW54i-5Lit5Y2A5piO5rSe!5e0!3m2!1szh-TW!2stw!4v1700591695435!5m2!1szh-TW!2stw" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </section>
+
+    <script>
+        window.onscroll = function () { scrollFunction() };
+
+        function scrollFunction() {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                document.getElementById("back-to-top").style.display = "block";
+            } else {
+                document.getElementById("back-to-top").style.display = "none";
+            }
+        }
+
+        function scrollToTop() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        }
+
+        function showMessage() {
+            alert("傳送成功! 等待客服人員回覆! 謝謝!!");
+            // You can also customize the way you want to display the success message,
+            // for example, by showing a modal or updating a specific div on the page.
+        }
+    </script>
+
+<script>
+    // Existing script code...
+
+    // Define the addToCart function
+    window.addToCart = function (productName, productPrice) {
+        const cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+        // Check if the product is already in the cart
+        const existingProduct = cart.find(item => item.name === productName);
+
+        if (existingProduct) {
+            // If product exists, increment quantity
+            existingProduct.quantity++;
+        } else {
+            // If not, add a new item to the cart
+            cart.push({
+                name: productName,
+                price: productPrice,
+                quantity: 1
+            });
+        }
+
+        // Save the updated cart to localStorage
+        localStorage.setItem("cart", JSON.stringify(cart));
+
+        // Update the cart display
+        updateCartTable(cart);
+        updateTotal(cart);
+    };
+
+    // Existing script code...
+</script>
+
+<script>
+    let currentSlide = 0;
+    let autoSlideInterval;
+
+    function showSlide(index) {
+        const slides = document.getElementsByClassName('carousel-image');
+        if (index >= slides.length) {
+            currentSlide = 0;
+        } else if (index < 0) {
+            currentSlide = slides.length - 1;
+        } else {
+            currentSlide = index;
+        }
+
+        for (let i = 0; i < slides.length; i++) {
+            slides[i].style.display = 'none';
+        }
+
+        slides[currentSlide].style.display = 'block';
+    }
+
+    function nextSlide() {
+        showSlide(currentSlide + 1);
+    }
+
+    function prevSlide() {
+        showSlide(currentSlide - 1);
+    }
+
+    function startAutoSlide() {
+        autoSlideInterval = setInterval(function () {
+            nextSlide();
+        }, 3000);
+    }
+
+    function stopAutoSlide() {
+        clearInterval(autoSlideInterval);
+    }
+
+    // Automatic slide show
+    startAutoSlide();
+
+    // Pause on hover
+    document.getElementById('image-carousel').addEventListener('mouseover', function () {
+        stopAutoSlide();
+    });
+
+    // Resume on mouse leave
+    document.getElementById('image-carousel').addEventListener('mouseleave', function () {
+        startAutoSlide();
+    });
+
+    showSlide(currentSlide); // Call showSlide function to display the initial slide
+</script>
+
+    <footer>
+        <a href="https://www.facebook.com/3cestylenanda.official/"><i class="fa-brands fa-facebook fa-fw fa-2x"></i>facebook</a>
+        <a href="https://twitter.com/stylenandajapan?lang=zh-Hant"><i class="fa-brands fa-twitter fa-fw fa-2x"></i>twitter</a>
+        <a href="https://www.youtube.com/@3cestylenanda"><i class="fa-brands fa-youtube fa-fw fa-2x"></i> YouTube</a>
+        <a href="https://www.instagram.com/3ce_official/"><i class="fa-brands fa-instagram-square fa-fw fa-2x"></i>Instagram</a>
+        <h6>Copyright © Zeal Open </h6>
+    </footer>
+</body>
+
+</html>
